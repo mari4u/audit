@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+template <typename T, typename A> //для определения типа возвращаемого 
+    auto s(T x,A y){                  //значения функции
+        return x+y;
+    }
+int main() {
+    cout<<s(2,1.5)<<endl;
+    
+    auto a = 1; //для определения типа переменной
+    cout<<typeid(a).name()<<endl;
+    
+    vector<int> v={1,2,3}; //для итерации по вектору, для замены длинного
+    for (auto n = v.begin(); n!=v.end(); ++n){ //названия типа переменной
+        cout<<*n<<" ";
+    }
+    cout<<endl;
+    
+    int b = 1; //для определения типа указателя
+    auto u = &b;
+    cout<<typeid(u).name()<<endl;
+    
+    
+
+    return 0;
+}
